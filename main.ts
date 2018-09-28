@@ -39,6 +39,13 @@ enum BeatList {
     breve_beat = 15
 }
 
+enum eventList {
+    //% block="按下"
+    pressed = 1,
+    //% block="抬起"
+    released = 0
+}
+
 //% weight=99 icon="\uf0e7" color=#1B80C4
 namespace JoyBit {
     /**
@@ -108,19 +115,33 @@ namespace JoyBit {
     }
 
     //% weight=79
-    //% blockId="btn_pressed" block="按钮 %btn| 按下"
-    export function btnPressed(btn:btnList): boolean {
+    //% blockId="btn_pressed" block="按钮 %btn| %btnEvent"
+    export function btnPressed(btn:btnList, btnEvent:eventList): boolean {
+
+        if(btn == btnList.cleft){
+            return pins.digitalReadPin(DigitalPin.P8) == btnEvent;
+        }
+
+        if(btn == btnList.cright){
+            return pins.digitalReadPin(DigitalPin.P16) == btnEvent;
+        }
+
+        if(btn == btnList.rup){
+            return pins.digitalReadPin(DigitalPin.P12) == btnEvent;
+        }
         
-        return pins.digitalReadPin(DigitalPin.P+btn) == 1;
-
-    }
-
-    //% weight=78
-    //% blockId="btn_released" block="按钮 %btn| 抬起"
-    export function btnReleased(btn:btnList): boolean {
+        if(btn == btnList.rdown){
+            return pins.digitalReadPin(DigitalPin.P14) == btnEvent;
+        }
         
-        return pins.digitalReadPin(DigitalPin.P+btn) == 0;
-
+        if(btn == btnList.rleft){
+            return pins.digitalReadPin(DigitalPin.P13) == btnEvent;
+        }
+        
+        if(btn == btnList.rright){
+            return pins.digitalReadPin(DigitalPin.P15) == btnEvent;
+        }
+        
     }
 
 }
