@@ -120,25 +120,15 @@ namespace JoyBit {
 
         if(btn == btnList.cleft){
             return pins.digitalReadPin(DigitalPin.P8) == btnEvent;
-        }
-
-        if(btn == btnList.cright){
+        }else if(btn == btnList.cright){
             return pins.digitalReadPin(DigitalPin.P16) == btnEvent;
-        }
-
-        if(btn == btnList.rup){
+        }else if(btn == btnList.rup){
             return pins.digitalReadPin(DigitalPin.P12) == btnEvent;
-        }
-        
-        if(btn == btnList.rdown){
+        }else if(btn == btnList.rdown){
             return pins.digitalReadPin(DigitalPin.P14) == btnEvent;
-        }
-        
-        if(btn == btnList.rleft){
+        }else if(btn == btnList.rleft){
             return pins.digitalReadPin(DigitalPin.P13) == btnEvent;
-        }
-        
-        if(btn == btnList.rright){
+        }else{
             return pins.digitalReadPin(DigitalPin.P15) == btnEvent;
         }
         
