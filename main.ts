@@ -107,23 +107,6 @@ namespace JoyBit {
         // }    
     }
 
-
-    //% weight=79
-    //% blockId="btn_pressed" block="按钮 %btn| 按下"
-    export function btnPressed(btn:btnList): boolean {
-        
-        return pins.digitalReadPin(DigitalPin.P+btn) == 1;
-
-    }
-
-    //% weight=78
-    //% blockId="btn_released" block="按钮 %btn| 抬起"
-    export function btnReleased(btn:btnList): boolean {
-        
-        return pins.digitalReadPin(DigitalPin.P+btn) == 0;
-
-    }
-
 }
 
 
