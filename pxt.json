@@ -1,0 +1,13 @@
+{
+    "name": "CruiseBit",
+    "dependencies": {
+        "core": "*"
+    },
+    "description": "奥松机器人 micro:bit 游戏手柄",
+    "icon": "./JoyBit.jpg",
+    "license": "MIT",
+    "files": [
+        "main.ts"
+    ],
+    "public": true
+}
